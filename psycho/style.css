@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-page {
+    font-family: "Jost", sans-serif;
+    min-height: 100vh;
+    background: url(images/imgi_18_Anxiety+and+depression+therapy+on+Long+Island.jpeg) no-repeat center center/cover;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600px;
+}
+
+.navbar-logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #777;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-container .navbar-menu {
+    display: flex;
+    text-align: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navbar-container .navbar-menu li a {
+    text-decoration: none;
+    color: #777;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+
+.navbar-container .navbar-menu li a:hover,
+.navbar-container .navbar-menu li a.active {
+    color: #162530;
+    background: lightblue;
+    border: 2px solid #fff;
+}
+
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: white;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 880px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .navbar-container .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-container .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .navbar-logo {
+        font-size: 1.7rem;
+    }
+
+    .navbar-container .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+}
+
+/* MAIN SECTION */
+.profile-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FLEX CONTAINER */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1000px;
+  padding: 40px;
+}
+
+/* IMAGE */
+.profile-image img {
+  width: 400px;
+  object-fit: cover;
+  border-radius: 50%; /* makes it circular */
+}
+
+/* TEXT */
+.profile-text h1 {
+  font-size: 36px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.profile-text p {
+  font-size: 25px;
+  line-height: 1.6;
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* RESPONSIVE (PHONE) */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Only applies to the signup page */
+.signup-page {
+  margin: 0;
+  background: white; /* Or your signup background image */
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR (still works globally) */
+.navbar {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #444;
+}
+
+.navbar a.active {
+  font-weight: bold;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTACT PAGE */
+.contact-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+.contact-header h1 {
+  font-size: 48px;
+  font-weight: normal;
+}
+
+.contact-header em {
+  font-style: italic;
+}
+
+.contact-header hr {
+  margin: 40px 0;
+  border-top: 1px solid #aaa;
+}
+
+.contact-form label {
+  margin-top: 20px;
+  display: block;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+}
+
+.two-columns {
+  display: flex;
+  gap: 20px;
+}
+
+.two-columns div {
+  flex: 1;
+}
+
+button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: #6b7f88;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .two-columns {
+    flex-direction: column;
+  }
+}
+
+/* MAIN NAVBAR */
+.main-navbar {
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* REMOVE DOTS + CONTROL WIDTH */
+.nav-menu {
+  list-style: none;          /*  removes dots */
+  display: flex;
+  justify-content: center;   /* keeps it centered */
+  gap: 24px;                 /* controls spacing (NOT too wide) */
+  padding: 0;
+  margin: 0;
+}
+
+/* LINKS */
+.nav-menu a {
+  text-decoration: none;     /*  removes underline */
+  color: #333;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .nav-menu {
+    gap: 14px;               /* smaller spacing on phone */
+    flex-wrap: wrap;         /* prevents overflow */
+  }
+
+  .nav-menu a {
+    font-size: 15px;
+  }
+}
+
+.about-page {
+  font-family: serif;
+  color: #2a2929;
+  line-height: 1.7;
+}
+
+/* TOP IMAGE */
+.about-page .about-hero {
+  width: 100%;
+  background: #fff;
+}
+
+.about-page .about-hero img {
+  width: 100%;
+  height: 320px;       /* NOT full screen */
+  object-fit: cover;  /* Crops gently */
+  display: block;
+}
+
+/* PHONE IMAGE SMALLER */
+@media (max-width: 768px) {
+  .about-page .about-hero img {
+    height: 200px;
+  }
+}
+
+/* WHITE CONTENT SECTION */
+.about-page .about-content {
+  background: white;
+  padding: 70px 20px;
+}
+
+.about-page .about-grid {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-page .about-text h1 {
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+
+.about-page .about-text p {
+  max-width: 600px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* ASH / GREY SECTION */
+.about-page .approach {
+  background: #e6e6e6;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-page .approach h2 {
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+
+.about-page .approach-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.about-page .approach-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.about-page .approach-card p {
+  font-size: 16px;
+}
+
+/* MOBILE STACK */
+@media (max-width: 768px) {
+  .about-page .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .about-text h1 {
+    font-size: 36px;
+  }
+}
+
+/* ABOUT NAVBAR OVER IMAGE */
+.about-page .about-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+}
+
+.about-page .about-nav-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.about-page .about-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.about-page .about-nav-links a {
+  text-decoration: none;
+  color: black; /* readable over image */
+  font-size: 30px;
+}
+
+.about-page .about-nav-links a.active {
+  font-weight: bold;
+}
+
+/* HERO IMAGE */
+.about-page .about-hero img {
+  width: 100%;
+  height: 420px; /* big but controlled */
+  object-fit: cover;
+  display: block;
+}
+
+/* PHONE IMAGE */
+@media (max-width: 768px) {
+  .about-page .about-hero img {
+    height: 260px;
+  }
+}
+
+/* PUSH CONTENT BELOW IMAGE + NAV */
+.about-page .about-content {
+  padding-top: 100px;
+}
